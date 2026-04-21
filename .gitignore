@@ -1,0 +1,84 @@
+# Build results
+*/bin/
+*/obj/
+*/out/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+bin
+
+# Visual Studio
+.vs/
+
+# Logs
+*.log
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored if you use package restore
+**/packages/*
+# Except build/ and tools/ which might be needed
+!**/packages/build/
+!**/packages/tools/
+
+# Dotnet tools
+.dotnet-tools/
+
+# Generated files
+Generated_Code/
+
+# Publish output
+publish/
+*.publish.xml
+
+# Azure
+*.azurePubxml
+*.pubxml
+*.publishproj
+
+# Others
+*.dbmdl
+*.bak
+*.sql
+*.sqlite
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+*.diff
+*.patch
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Rider
+.idea/
+
+# Backup & reports
+*_backup*/
+reports/
+
+# Mac files
+.DS_Store
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.fake
