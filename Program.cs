@@ -1,4 +1,5 @@
 using Farmers_Market_API.Repositories;
+using Farmers_Market_API.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IProduceRepository, ProduceRepository>();
+builder.Services.AddSingleton<IFarmerRepository, FarmerRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

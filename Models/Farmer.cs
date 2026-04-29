@@ -1,36 +1,41 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Farmers_Market_API.Models
 {
-    public class Farmer
+    // Inheritance: Farmer inherits from Person
+    public class Farmer : Person
     {
-        static int _idCounter = 1;
-
         public int FarmerId { get; set; }
-        public string FullName { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string PhoneNumber { get; set; } = string.Empty;
         public string Location { get; set; } = string.Empty;
         public string Province { get; set; } = string.Empty;
         public double Rating { get; set; } = 0.0;
         public bool IsVerified { get; set; } = false;
+        public string FarmName { get; set; } = string.Empty;
 
-        public Farmer(int farmerId, string fullName, string email, string phoneNumber, string location, string province, double rating, bool isVerified)
+        // Constructor using 'base' to pass shared data to the Person class
+        public Farmer(int farmerId, string fullName, string email, string phoneNumber, 
+                      string location, string province, double rating, bool isVerified, string farmName)
         {
             FarmerId = farmerId;
-            FullName = fullName;
-            Email = email;
-            PhoneNumber = phoneNumber;
+            FullName = fullName; // Property from Person
+            Email = email;       // Property from Person
+            PhoneNumber = phoneNumber; // Property from Person
             Location = location;
             Province = province;
             Rating = rating;
             IsVerified = isVerified;
+            FarmName = farmName;
         }
 
-        public Farmer(){}
+        // Parameterless constructor for flexibility/serialization
+        public Farmer() { }
+
+        // Polymorphism: Providing a unique implementation for Farmer contact info
+        public override string GetContactInfo()
+        {
+            string verifiedStatus = IsVerified ? " [Verified Seller]" : "";
+            return $"Farmer: {FullName} ({FarmName}){verifiedStatus} - Phone: {PhoneNumber} - Location: {Location}, {Province}";
+        }
 
         public int GetFarmerId()
         {
